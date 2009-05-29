@@ -9,8 +9,8 @@ applications.
 .. _Django: http://www.djangoproject.com/
 
 
- TODO
-======
+TODO
+====
 
 * Write FAQ inline admin ordering JavaScript
 * Consider if/how-to add ordering to Topics
