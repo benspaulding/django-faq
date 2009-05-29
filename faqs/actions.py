@@ -11,17 +11,17 @@ def update_status(modeladmin, request, queryset, status):
     #
     #  1. No one should ever be updating zillions of Topics or FAQ, so
     #     performance is not an issue.
-    #  2. We want to log what the user just did, just to be tidy.
+    #  2. To be tidy, we want to log what the user has done.
     #
     for obj in queryset:
         obj.status = status
         obj.save()
-        # Now log what just happened.
+        # Now log what happened.
         # Use ugettext_noop() 'cause this is going straight into the db.
         log_message = ugettext_noop(u'Changed status to \'%s\'.' % obj.get_status_display())
         modeladmin.log_change(request, obj, log_message)
 
-    # Now send a message to the user telling them what they just did.
+    # Send a message to the user telling them what has happened.
     message_dict = {
         'rows_updated': queryset.count(),
         'verbose_name': modeladmin.model._meta.verbose_name,
