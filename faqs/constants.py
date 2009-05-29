@@ -1,5 +1,6 @@
 from django.utils.translation import ugettext_lazy as _
 
+
 # Status constants
 DRAFTED = 1
 PUBLISHED = 2

@@ -24,14 +24,13 @@ class TopicAdmin(FAQsAdminBase):
     fieldsets = (
         (None, {
             'fields': (('title', 'slug'), 'description', 'status', 'sites',
-                'template_name')
-        }),
+                'template_name')}),
     )
-    inlines = (FAQInline,)
+    inlines = (FAQInline, )
     list_display = ('title', 'description', 'status', 'faq_count_drafted',
         'faq_count_published', 'faq_count_removed', 'faq_count_total')
     list_filter = ('status', 'modified', 'created', 'sites')
-    prepopulated_fields = {'slug': ('title',)}
+    prepopulated_fields = {'slug': ('title', )}
     search_fields = ('title', 'description')
 
     def faq_count_drafted(self, obj):
@@ -59,12 +58,11 @@ class FAQAdmin(FAQsAdminBase):
     fieldsets = (
         (None, {
             'fields': ('topic', ('question', 'slug'), 'answer', 'status',
-                'ordering')
-        }),
+                'ordering')}),
     )
     list_display = ('question', 'topic', 'status', 'ordering')
     list_filter = ('status', 'modified', 'created', 'topic')
-    prepopulated_fields = {'slug': ('question',)}
+    prepopulated_fields = {'slug': ('question', )}
     save_as = True
     search_fields = ('question', 'answer')
 

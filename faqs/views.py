@@ -20,6 +20,7 @@ def topic_list(request):
     return object_list(request, queryset=Topic.published.all(),
         template_object_name='topic')
 
+
 def topic_detail(request, slug):
     """
     A detail view of an FAQ topic.
@@ -46,6 +47,7 @@ def topic_detail(request, slug):
     return object_detail(request, queryset=Topic.published.all(),
         extra_context=extra_context, template_object_name='topic',
         template_name_field='template_name', slug=slug)
+
 
 def faq_detail(request, topic_slug, slug):
     """

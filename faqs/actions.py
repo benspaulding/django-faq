@@ -18,7 +18,8 @@ def update_status(modeladmin, request, queryset, status):
         obj.save()
         # Now log what happened.
         # Use ugettext_noop() 'cause this is going straight into the db.
-        log_message = ugettext_noop(u'Changed status to \'%s\'.' % obj.get_status_display())
+        log_message = ugettext_noop(u'Changed status to \'%s\'.' %
+            obj.get_status_display())
         modeladmin.log_change(request, obj, log_message)
 
     # Send a message to the user telling them what has happened.
@@ -39,15 +40,18 @@ def update_status(modeladmin, request, queryset, status):
     # warning from their browser.
     return None
 
+
 def draft(modeladmin, request, queryset):
     """Admin action for setting status of selected items to 'drafted'."""
     return update_status(modeladmin, request, queryset, DRAFTED)
 draft.short_description = _(u'Draft selected %(verbose_name_plural)s')
 
+
 def publish(modeladmin, request, queryset):
     """Admin action for setting status of selected items to 'published'."""
     return update_status(modeladmin, request, queryset, PUBLISHED)
 publish.short_description = _(u'Publish selected %(verbose_name_plural)s')
+
 
 def remove(modeladmin, request, queryset):
     """Admin action for setting status of selected items to 'removed'."""
