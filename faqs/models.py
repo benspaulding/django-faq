@@ -5,7 +5,7 @@ from django.contrib.sites.models import Site
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext_lazy as _
 
-from faqs.constants import DRAFTED_STATUS, STATUS_CHOICES
+from faqs.constants import DRAFTED, STATUS_CHOICES
 from faqs.managers import StatusManager, OnSiteManager, PublishedManager
 
 
@@ -17,7 +17,7 @@ class FAQsBase(models.Model):
         null=True)
     status = models.IntegerField(_(u'status'), choices=STATUS_CHOICES,
         # TODO: Genericize/fix the help_text. It applies to both topics & FAQs.
-        db_index=True, default=DRAFTED_STATUS, help_text=_(u'Only %(class)s \
+        db_index=True, default=DRAFTED, help_text=_(u'Only %(class)s \
             with "published" status will be displayed publicly.'))
 
     objects = StatusManager()

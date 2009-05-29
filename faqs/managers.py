@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 
-from faqs.constants import DRAFTED_STATUS, PUBLISHED_STATUS, REMOVED_STATUS
+from faqs.constants import DRAFTED, PUBLISHED, REMOVED
 
 
 def _sites_field_lookups(model):
@@ -22,15 +22,15 @@ class StatusManager(models.Manager):
 
     def drafted(self):
         """Returns only items with a status of 'drafted'."""
-        return self.get_query_set().filter(status__exact=DRAFTED_STATUS)
+        return self.get_query_set().filter(status__exact=DRAFTED)
 
     def published(self):
         """Returns only items with a status of 'published'."""
-        return self.get_query_set().filter(status__exact=PUBLISHED_STATUS)
+        return self.get_query_set().filter(status__exact=PUBLISHED)
 
     def removed(self):
         """Returns only items with a status of 'removed'."""
-        return self.get_query_set().filter(status__exact=REMOVED_STATUS)
+        return self.get_query_set().filter(status__exact=REMOVED)
 
 
 class OnSiteManager(StatusManager):
@@ -46,4 +46,4 @@ class PublishedManager(models.Manager):
 
     def get_query_set(self):
         return super(PublishedManager, self).get_query_set().filter(
-            status__exact=PUBLISHED_STATUS, **_sites_field_lookups(self.model))
+            status__exact=PUBLISHED, **_sites_field_lookups(self.model))

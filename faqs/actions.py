@@ -1,8 +1,7 @@
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ugettext_noop, ungettext
 
-from faqs.constants import (DRAFTED_STATUS, PUBLISHED_STATUS, REMOVED_STATUS,
-    STATUS_CHOICES)
+from faqs.constants import DRAFTED, PUBLISHED, REMOVED, STATUS_CHOICES
 
 
 def update_status(modeladmin, request, queryset, status):
@@ -42,15 +41,15 @@ def update_status(modeladmin, request, queryset, status):
 
 def draft(modeladmin, request, queryset):
     """Admin action for setting status of selected items to 'drafted'."""
-    return update_status(modeladmin, request, queryset, DRAFTED_STATUS)
+    return update_status(modeladmin, request, queryset, DRAFTED)
 draft.short_description = _(u'Draft selected %(verbose_name_plural)s')
 
 def publish(modeladmin, request, queryset):
     """Admin action for setting status of selected items to 'published'."""
-    return update_status(modeladmin, request, queryset, PUBLISHED_STATUS)
+    return update_status(modeladmin, request, queryset, PUBLISHED)
 publish.short_description = _(u'Publish selected %(verbose_name_plural)s')
 
 def remove(modeladmin, request, queryset):
     """Admin action for setting status of selected items to 'removed'."""
-    return update_status(modeladmin, request, queryset, REMOVED_STATUS)
+    return update_status(modeladmin, request, queryset, REMOVED)
 remove.short_description = _(u'Remove selected %(verbose_name_plural)s')
