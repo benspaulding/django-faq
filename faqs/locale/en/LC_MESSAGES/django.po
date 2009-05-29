@@ -1,0 +1,166 @@
+# English "translation" for the django-faqs project.
+# Copyright (C) 2009, Ben Spaulding.
+# This file is distributed under the same license as the django-faqs package.
+# Ben Spaulding <ben@benspaulding.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: Django FAQ\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-29 02:10-0600\n"
+"PO-Revision-Date: 2009-05-29 02:10-0600\n"
+"Last-Translator: Ben Spaulding <ben@benspaulding.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: __init__.py:10
+msgid "faqs"
+msgstr "FAQ management"
+
+#: actions.py:22
+#, python-format
+msgid "Changed status to '%s'."
+msgstr ""
+
+#: actions.py:33
+#, python-format
+msgid "%(rows_updated)s %(verbose_name)s was successfully %(verb)s."
+msgid_plural ""
+"%(rows_updated)s  %(verbose_name_plural)s were successfully %(verb)s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: actions.py:46
+#, python-format
+msgid "Draft selected %(verbose_name_plural)s"
+msgstr ""
+
+#: actions.py:51
+#, python-format
+msgid "Publish selected %(verbose_name_plural)s"
+msgstr ""
+
+#: actions.py:56
+#, python-format
+msgid "Remove selected %(verbose_name_plural)s"
+msgstr ""
+
+#: admin.py:40
+msgid "Drafted"
+msgstr ""
+
+#: admin.py:45
+msgid "Published"
+msgstr ""
+
+#: admin.py:50
+msgid "Removed"
+msgstr ""
+
+#: admin.py:55
+msgid "Total"
+msgstr ""
+
+#: constants.py:9
+msgid "drafted"
+msgstr ""
+
+#: constants.py:10
+msgid "published"
+msgstr ""
+
+#: constants.py:11
+msgid "removed"
+msgstr ""
+
+#: models.py:15
+msgid "date created"
+msgstr ""
+
+#: models.py:16
+msgid "date modified"
+msgstr ""
+
+#: models.py:18
+msgid "status"
+msgstr ""
+
+#: models.py:20
+#, python-format
+msgid ""
+"Only %(class)s             with \"published\" status will be displayed "
+"publicly."
+msgstr ""
+
+#: models.py:42
+msgid "title"
+msgstr ""
+
+#: models.py:43 models.py:71
+msgid "slug"
+msgstr ""
+
+#: models.py:43
+msgid "Used in         the URL for the topic. Must be unique."
+msgstr ""
+
+#: models.py:45
+msgid "description"
+msgstr ""
+
+#: models.py:46
+msgid "A short description of this FAQ topic."
+msgstr ""
+
+#: models.py:47
+msgid "sites"
+msgstr ""
+
+#: models.py:49
+msgid "template name"
+msgstr ""
+
+#: models.py:50
+msgid ""
+"Optional template to use for this             topic's detail page, e.g., "
+"\"faqs/topics/special.html\". If not             given the standard template "
+"will be used."
+msgstr ""
+
+#: models.py:56 models.py:74
+msgid "topic"
+msgstr ""
+
+#: models.py:57
+msgid "topics"
+msgstr ""
+
+#: models.py:70
+msgid "question"
+msgstr ""
+
+#: models.py:71
+msgid "Used in         the URL for the FAQ. Must be unique."
+msgstr ""
+
+#: models.py:73
+msgid "answer"
+msgstr ""
+
+#: models.py:76
+msgid "ordering"
+msgstr ""
+
+#: models.py:77
+msgid ""
+"An integer used to order the FAQ amongst             others related to the "
+"same topic. If not given this FAQ will be             last in the list."
+msgstr ""
+
+#: models.py:83
+msgid "FAQ"
+msgstr ""
+
+#: models.py:84
+msgid "FAQs"
+msgstr ""

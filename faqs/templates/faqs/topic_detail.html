@@ -1,0 +1,22 @@
+{% extends "faqs/base.html" %}
+
+
+{% block title %}FAQ: {{ topic.title }}{% endblock %}
+
+{% block header %}FAQ: {{ topic.title }}{% endblock %}
+
+{% block content %}
+  <p>{{ topic.description }}</p>
+
+  <ol>
+    {% for faq in faq_list %}
+      <li>
+        <h4 id="{{ faq.slug }}">
+          {{ faq.question }}
+          <a href="#{{ faq.slug }}">∞</a>
+        </h4>
+        {{ faq.answer|linebreaks|urlize }}
+      </li>
+    {% endfor %}
+  </ol>
+{% endblock %}

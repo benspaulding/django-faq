@@ -1,0 +1,14 @@
+{% extends "faqs/base.html" %}
+
+
+{% block title %}Frequently Asked Questions{% endblock %}
+
+{% block header %}Frequently Asked Questions{% endblock %}
+
+{% block content %}
+  <ol>
+    {% for topic in topic_list %}
+      <li><a href="{{ topic.get_absolute_url }}">{{ topic.title }}</a></li>
+    {% endfor %}
+  </ol>
+{% endblock %}
