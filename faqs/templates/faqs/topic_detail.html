@@ -9,13 +9,13 @@
   <p>{{ topic.description }}</p>
 
   <ol>
-    {% for faq in faq_list %}
+    {% for question in question_list %}
       <li>
-        <h4 id="{{ faq.slug }}">
-          {{ faq.question }}
-          <a href="#{{ faq.slug }}">∞</a>
+        <h4 id="{{ question.slug }}">
+          {{ question.question }}
+          <a href="#{{ question.slug }}">∞</a>
         </h4>
-        {{ faq.answer|linebreaks|urlize }}
+        {{ question.answer|linebreaks|urlize }}
       </li>
     {% endfor %}
   </ol>

@@ -1,7 +1,7 @@
 from haystack import indexes
 from haystack.sites import site
 
-from faqs.models import Topic, FAQ
+from faqs.models import Topic, Question
 
 
 class FAQsIndexBase(indexes.SearchIndex):
@@ -16,12 +16,12 @@ class TopicIndex(FAQsIndexBase):
         return Topic.published.all()
 
 
-class FAQIndex(FAQsIndexBase):
+class QuestionIndex(FAQsIndexBase):
     title = indexes.CharField(model_attr='question', indexed=True)
 
     def get_query_set(self):
-        return FAQ.published.all()
+        return Question.published.all()
 
 
 site.register(Topic, TopicIndex)
-site.register(FAQ, FAQIndex)
+site.register(Question, QuestionIndex)

@@ -2,7 +2,7 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404, redirect
 from django.views.generic.list_detail import object_list, object_detail
 
-from faqs.models import Topic, FAQ
+from faqs.models import Topic, Question
 
 
 def topic_list(request):
@@ -35,13 +35,13 @@ def topic_detail(request, slug):
     Context:
         topic
             An :model:`faqs.Topic` object.
-        faq_list
-            A list of all published :model:`faqs.FAQ` objects that relate
+        question_list
+            A list of all published :model:`faqs.Question` objects that relate
             to the given :model:`faqs.Topic`.
 
     """
     extra_context = {
-        'faq_list': FAQ.published.filter(topic__slug=slug),
+        'question_list': Question.published.filter(topic__slug=slug),
     }
 
     return object_detail(request, queryset=Topic.published.all(),
@@ -49,24 +49,25 @@ def topic_detail(request, slug):
         template_name_field='template_name', slug=slug)
 
 
-def faq_detail(request, topic_slug, slug):
+def question_detail(request, topic_slug, slug):
     """
-    A detail view of an FAQ.
+    A detail view of a Question.
 
-    This view simply redirects to a detail page for the :model:`faqs.FAQ`
+    This view simply redirects to a detail page for the :model:`faqs.Question`
     object's related :model:`faqs.Topic`, with the addition of a fragment
-    identifier that links to the given :model:`faqs.FAQ`, e.g.
-    ``faq/topic-slug/#faq-slug``.
+    identifier that links to the given :model:`faqs.Question`, e.g.
+    ``faq/topic-slug/#question-slug``.
 
-    Note that a 404 will be raised if the :model:`faqs.FAQ` is not published
-    (i.e. it is drafted or removed).
+    Note that a 404 will be raised if the :model:`faqs.Question` is not
+    published (i.e. it is drafted or removed).
 
     Thus, the templates and context are those used on the
     :view:`faqs.views.topic_detail` view.
 
     """
-    get_object_or_404(FAQ.published.filter(slug=slug, topic__slug=topic_slug))
+    get_object_or_404(Question.published.filter(slug=slug,
+        topic__slug=topic_slug))
     topic_url = reverse('faqs-topic-detail', kwargs={'slug': topic_slug})
-    faq_fragment = '#%s' % slug
+    question_fragment = '#%s' % slug
 
-    return redirect(topic_url + faq_fragment, permanent=True)
+    return redirect(topic_url + question_fragment, permanent=True)

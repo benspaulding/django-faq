@@ -3,14 +3,14 @@ from django.contrib.sites.models import Site
 from django.utils.translation import ugettext_lazy as _
 
 from faqs.actions import draft, publish, remove
-from faqs.models import Topic, FAQ
-from faqs.forms import FAQForm
+from faqs.models import Topic, Question
+from faqs.forms import QuestionForm
 
 
-class FAQInline(admin.TabularInline):
+class QuestionInline(admin.TabularInline):
     extra = 1
-    form = FAQForm
-    model = FAQ
+    form = QuestionForm
+    model = Question
 
 
 class FAQsAdminBase(admin.ModelAdmin):
@@ -26,35 +26,36 @@ class TopicAdmin(FAQsAdminBase):
             'fields': (('title', 'slug'), 'description', 'status', 'sites',
                 'template_name')}),
     )
-    inlines = (FAQInline, )
-    list_display = ('title', 'description', 'status', 'faq_count_drafted',
-        'faq_count_published', 'faq_count_removed', 'faq_count_total')
+    inlines = (QuestionInline, )
+    list_display = ('title', 'description', 'status', 'question_count_drafted',
+        'question_count_published', 'question_count_removed',
+        'question_count_total')
     list_filter = ('status', 'modified', 'created', 'sites')
     prepopulated_fields = {'slug': ('title', )}
     search_fields = ('title', 'description')
 
-    def faq_count_drafted(self, obj):
-        """Returns the number of drafted FAQ for this topic."""
-        return obj.faqs.drafted().count()
-    faq_count_drafted.short_description = _(u'Drafted')
+    def question_count_drafted(self, obj):
+        """Returns the number of drafted Questions for this topic."""
+        return obj.questions.drafted().count()
+    question_count_drafted.short_description = _(u'Drafted')
 
-    def faq_count_published(self, obj):
-        """Returns the number of published FAQ for this topic."""
-        return obj.faqs.published().count()
-    faq_count_published.short_description = _(u'Published')
+    def question_count_published(self, obj):
+        """Returns the number of published Questions for this topic."""
+        return obj.questions.published().count()
+    question_count_published.short_description = _(u'Published')
 
-    def faq_count_removed(self, obj):
-        """Returns the number of removed FAQ for this topic."""
-        return obj.faqs.removed().count()
-    faq_count_removed.short_description = _(u'Removed')
+    def question_count_removed(self, obj):
+        """Returns the number of removed Questions for this topic."""
+        return obj.questions.removed().count()
+    question_count_removed.short_description = _(u'Removed')
 
-    def faq_count_total(self, obj):
-        """Returns the total number of FAQ for this topic."""
-        return obj.faqs.count()
-    faq_count_total.short_description = _(u'Total')
+    def question_count_total(self, obj):
+        """Returns the total number of Questions for this topic."""
+        return obj.questions.count()
+    question_count_total.short_description = _(u'Total')
 
 
-class FAQAdmin(FAQsAdminBase):
+class QuestionAdmin(FAQsAdminBase):
     fieldsets = (
         (None, {
             'fields': ('topic', ('question', 'slug'), 'answer', 'status',
@@ -68,4 +69,4 @@ class FAQAdmin(FAQsAdminBase):
 
 
 admin.site.register(Topic, TopicAdmin)
-admin.site.register(FAQ, FAQAdmin)
+admin.site.register(Question, QuestionAdmin)

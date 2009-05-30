@@ -13,25 +13,25 @@ def _field_lookups(model, status=None):
     the function the objects will also be filtered by the given status.
 
     This function saves from having to make two different on-site and
-    published Managers each for `Topic` and `FAQ`, and having to move
+    published Managers each for `Topic` and `Question`, and having to move
     Managers out of the `FAQsBase` model and into each of the `Topic`
-    and `FAQ` models.
+    and `Question` models.
 
     """
     # Import models here to avoid circular import fail.
-    from faqs.models import Topic, FAQ
+    from faqs.models import Topic, Question
 
     field_lookups = {}
 
     if model == Topic:
         field_lookups['sites__pk'] = settings.SITE_ID
 
-    if model == FAQ:
+    if model == Question:
         field_lookups['topic__sites__pk'] = settings.SITE_ID
         if status:
             field_lookups['topic__status'] = status
 
-    # Both Topic & FAQ have a status field.
+    # Both Topic & Question have a status field.
     if status:
         field_lookups['status'] = status
 

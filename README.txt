@@ -3,7 +3,7 @@
 ============================================
 
 This application provides the ability to create and manage topics 
-and lists of Frequently Asked Questions (FAQs) in Django_ 
+and lists of Frequently Asked Questions (FAQ) in Django_
 applications.
 
 .. _Django: http://www.djangoproject.com/
@@ -12,9 +12,9 @@ applications.
 TODO
 ====
 
-* Write FAQ inline admin ordering JavaScript
+* Write Question inline admin ordering JavaScript
 * Consider if/how-to add ordering to Topics
-* Implement signals when (un)publishing Topic & FAQ
+* Implement signals when (un)publishing Topic & Question
 * Write INSTALL.txt
 * Write documentation
 * Write tests

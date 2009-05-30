@@ -9,7 +9,7 @@ def update_status(modeladmin, request, queryset, status):
     # We loop over the objects here rather than use queryset.update() for
     # two reasons:
     #
-    #  1. No one should ever be updating zillions of Topics or FAQ, so
+    #  1. No one should ever be updating zillions of Topics or Questions, so
     #     performance is not an issue.
     #  2. To be tidy, we want to log what the user has done.
     #
