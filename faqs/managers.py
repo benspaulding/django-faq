@@ -4,17 +4,38 @@ from django.conf import settings
 from faqs.constants import DRAFTED, PUBLISHED, REMOVED
 
 
-def _sites_field_lookups(model):
-    """Abstraction of site field lookups for managers."""
+def _field_lookups(model, status=None):
+    """
+    Abstraction of field lookups for managers.
+
+    Returns a dictionary of field lookups for a queryset. The lookups
+    will always filter by site. Optionally, if ``status`` is passed to
+    the function the objects will also be filtered by the given status.
+
+    This function saves from having to make two different on-site and
+    published Managers each for `Topic` and `FAQ`, and having to move
+    Managers out of the `FAQsBase` model and into each of the `Topic`
+    and `FAQ` models.
+
+    """
     # Import models here to avoid circular import fail.
     from faqs.models import Topic, FAQ
 
-    if model == Topic:
-        field_lookup = 'sites__pk'
-    elif model == FAQ:
-        field_lookup = 'topic__sites__pk'
+    field_lookups = {}
 
-    return {field_lookup: settings.SITE_ID}
+    if model == Topic:
+        field_lookups['sites__pk'] = settings.SITE_ID
+
+    if model == FAQ:
+        field_lookups['topic__sites__pk'] = settings.SITE_ID
+        if status:
+            field_lookups['topic__status'] = status
+
+    # Both Topic & FAQ have a status field.
+    if status:
+        field_lookups['status'] = status
+
+    return field_lookups
 
 
 class StatusManager(models.Manager):
@@ -38,7 +59,7 @@ class OnSiteManager(StatusManager):
 
     def get_query_set(self):
         return super(OnSiteManager, self).get_query_set().filter(
-            **_sites_field_lookups(self.model))
+            **_field_lookups(self.model))
 
 
 class PublishedManager(models.Manager):
@@ -46,4 +67,4 @@ class PublishedManager(models.Manager):
 
     def get_query_set(self):
         return super(PublishedManager, self).get_query_set().filter(
-            status__exact=PUBLISHED, **_sites_field_lookups(self.model))
+            **_field_lookups(self.model, PUBLISHED))
