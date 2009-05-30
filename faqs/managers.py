@@ -43,15 +43,15 @@ class StatusManager(models.Manager):
 
     def drafted(self):
         """Returns only items with a status of 'drafted'."""
-        return self.get_query_set().filter(status__exact=DRAFTED)
+        return self.get_query_set().filter(status=DRAFTED)
 
     def published(self):
         """Returns only items with a status of 'published'."""
-        return self.get_query_set().filter(status__exact=PUBLISHED)
+        return self.get_query_set().filter(status=PUBLISHED)
 
     def removed(self):
         """Returns only items with a status of 'removed'."""
-        return self.get_query_set().filter(status__exact=REMOVED)
+        return self.get_query_set().filter(status=REMOVED)
 
 
 class OnSiteManager(StatusManager):

@@ -41,7 +41,7 @@ def topic_detail(request, slug):
 
     """
     extra_context = {
-        'faq_list': FAQ.published.filter(topic__slug__exact=slug),
+        'faq_list': FAQ.published.filter(topic__slug=slug),
     }
 
     return object_detail(request, queryset=Topic.published.all(),
@@ -65,8 +65,7 @@ def faq_detail(request, topic_slug, slug):
     :view:`faqs.views.topic_detail` view.
 
     """
-    get_object_or_404(FAQ.published.filter(slug__exact=slug,
-        topic__slug__exact=topic_slug))
+    get_object_or_404(FAQ.published.filter(slug=slug, topic__slug=topic_slug))
     topic_url = reverse('faqs-topic-detail', kwargs={'slug': topic_slug})
     faq_fragment = '#%s' % slug
 
