@@ -5,11 +5,11 @@ from django.contrib.sites.models import Site
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext_lazy as _
 
-from faqs.constants import DRAFTED, STATUS_CHOICES
-from faqs.managers import StatusManager, OnSiteManager, PublishedManager
+from faq.constants import DRAFTED, STATUS_CHOICES
+from faq.managers import StatusManager, OnSiteManager, PublishedManager
 
 
-class FAQsBase(models.Model):
+class FAQBase(models.Model):
     """A model holding information common to Topics and Questions."""
 
     created = models.DateTimeField(_(u'date created'), editable=False)
@@ -33,10 +33,10 @@ class FAQsBase(models.Model):
             self.created = datetime.datetime.now()
         else:
             self.modified = datetime.datetime.now()
-        super(FAQsBase, self).save()
+        super(FAQBase, self).save()
 
 
-class Topic(FAQsBase):
+class Topic(FAQBase):
     """A topic that a Question can belong to."""
 
     title = models.CharField(_(u'title'), max_length=255)
@@ -45,13 +45,13 @@ class Topic(FAQsBase):
     description = models.TextField(_(u'description'), blank=True,
         help_text=_(u'A short description of this topic.'))
     sites = models.ManyToManyField(Site, verbose_name=_(u'sites'),
-        related_name='faqs_topics')
+        related_name='faq_topics')
     template_name = models.CharField(_(u'template name'), blank=True,
         max_length=255, help_text=_(u'Optional template to use for this \
-            topic\'s detail page, e.g., "faqs/topics/special.html". If not \
+            topic\'s detail page, e.g., "faq/topics/special.html". If not \
             given the standard template will be used.'))
 
-    class Meta(FAQsBase.Meta):
+    class Meta(FAQBase.Meta):
         ordering = ('title', 'slug')
         verbose_name = _(u'topic')
         verbose_name_plural = _(u'topics')
@@ -61,10 +61,10 @@ class Topic(FAQsBase):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('faqs-topic-detail', (), {'slug': self.slug})
+        return ('faq-topic-detail', (), {'slug': self.slug})
 
 
-class Question(FAQsBase):
+class Question(FAQBase):
     """A frequently asked question."""
 
     question = models.CharField(_(u'question'), max_length=255)
@@ -78,7 +78,7 @@ class Question(FAQsBase):
             amongst others related to the same topic. If not given this \
             question will be last in the list.'))
 
-    class Meta(FAQsBase.Meta):
+    class Meta(FAQBase.Meta):
         ordering = ('ordering', 'question', 'slug')
         verbose_name = _(u'question')
         verbose_name_plural = _(u'questions')
@@ -111,5 +111,5 @@ class Question(FAQsBase):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('faqs-question-detail', (), {'topic_slug': self.topic.slug,
+        return ('faq-question-detail', (), {'topic_slug': self.topic.slug,
             'slug': self.slug})

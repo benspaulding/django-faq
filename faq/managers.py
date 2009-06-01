@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 
-from faqs.constants import DRAFTED, PUBLISHED, REMOVED
+from faq.constants import DRAFTED, PUBLISHED, REMOVED
 
 
 def _field_lookups(model, status=None):
@@ -14,12 +14,12 @@ def _field_lookups(model, status=None):
 
     This function saves from having to make two different on-site and
     published Managers each for `Topic` and `Question`, and having to move
-    Managers out of the `FAQsBase` model and into each of the `Topic`
+    Managers out of the `FAQBase` model and into each of the `Topic`
     and `Question` models.
 
     """
     # Import models here to avoid circular import fail.
-    from faqs.models import Topic, Question
+    from faq.models import Topic, Question
 
     field_lookups = {}
 

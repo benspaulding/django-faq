@@ -1,7 +1,7 @@
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ugettext_noop, ungettext
 
-from faqs.constants import DRAFTED, PUBLISHED, REMOVED, STATUS_CHOICES
+from faq.constants import DRAFTED, PUBLISHED, REMOVED, STATUS_CHOICES
 
 
 def update_status(modeladmin, request, queryset, status):

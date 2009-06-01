@@ -2,9 +2,9 @@ from django.contrib import admin
 from django.contrib.sites.models import Site
 from django.utils.translation import ugettext_lazy as _
 
-from faqs.actions import draft, publish, remove
-from faqs.models import Topic, Question
-from faqs.forms import QuestionForm
+from faq.actions import draft, publish, remove
+from faq.models import Topic, Question
+from faq.forms import QuestionForm
 
 
 class QuestionInline(admin.TabularInline):
@@ -13,14 +13,14 @@ class QuestionInline(admin.TabularInline):
     model = Question
 
 
-class FAQsAdminBase(admin.ModelAdmin):
+class FAQAdminBase(admin.ModelAdmin):
     actions = (draft, publish, remove)
     actions_on_top = True
     actions_on_bottom = True
     list_per_page = 50
 
 
-class TopicAdmin(FAQsAdminBase):
+class TopicAdmin(FAQAdminBase):
     fieldsets = (
         (None, {
             'fields': (('title', 'slug'), 'description', 'status', 'sites',
@@ -55,7 +55,7 @@ class TopicAdmin(FAQsAdminBase):
     question_count_total.short_description = _(u'Total')
 
 
-class QuestionAdmin(FAQsAdminBase):
+class QuestionAdmin(FAQAdminBase):
     fieldsets = (
         (None, {
             'fields': ('topic', ('question', 'slug'), 'answer', 'status',

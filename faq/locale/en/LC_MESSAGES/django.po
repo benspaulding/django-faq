@@ -1,23 +1,25 @@
-# English "translation" for the django-faqs project.
+# English "translation" for the django-faq project.
 # Copyright (C) 2009, Ben Spaulding.
-# This file is distributed under the same license as the django-faqs package.
+# This file is distributed under the same license as the django-faq package.
 # Ben Spaulding <ben@benspaulding.com>, 2009.
+#
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Django FAQ\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-29 02:10-0600\n"
-"PO-Revision-Date: 2009-05-29 02:10-0600\n"
+"PO-Revision-Date: 2009-05-31 22:34-0600\n"
 "Last-Translator: Ben Spaulding <ben@benspaulding.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: __init__.py:10
-msgid "faqs"
-msgstr "FAQ management"
+msgid "faq"
+msgstr "FAQ"
 
-#: actions.py:22
+#: actions.py:21
 #, python-format
 msgid "Changed status to '%s'."
 msgstr ""
@@ -30,17 +32,17 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: actions.py:46
+#: actions.py:47
 #, python-format
 msgid "Draft selected %(verbose_name_plural)s"
 msgstr ""
 
-#: actions.py:51
+#: actions.py:53
 #, python-format
 msgid "Publish selected %(verbose_name_plural)s"
 msgstr ""
 
-#: actions.py:56
+#: actions.py:59
 #, python-format
 msgid "Remove selected %(verbose_name_plural)s"
 msgstr ""
@@ -61,15 +63,15 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
-#: constants.py:9
+#: constants.py:10
 msgid "drafted"
 msgstr ""
 
-#: constants.py:10
+#: constants.py:11
 msgid "published"
 msgstr ""
 
-#: constants.py:11
+#: constants.py:12
 msgid "removed"
 msgstr ""
 
@@ -109,7 +111,7 @@ msgid "description"
 msgstr ""
 
 #: models.py:46
-msgid "A short description of this FAQ topic."
+msgid "A short description of this topic."
 msgstr ""
 
 #: models.py:47
@@ -123,7 +125,7 @@ msgstr ""
 #: models.py:50
 msgid ""
 "Optional template to use for this             topic's detail page, e.g., "
-"\"faqs/topics/special.html\". If not             given the standard template "
+"\"faq/topics/special.html\". If not             given the standard template "
 "will be used."
 msgstr ""
 
@@ -135,12 +137,12 @@ msgstr ""
 msgid "topics"
 msgstr ""
 
-#: models.py:70
+#: models.py:70 models.py:83
 msgid "question"
 msgstr ""
 
 #: models.py:71
-msgid "Used in         the URL for the FAQ. Must be unique."
+msgid "Used in         the URL for the Question. Must be unique."
 msgstr ""
 
 #: models.py:73
@@ -153,14 +155,11 @@ msgstr ""
 
 #: models.py:77
 msgid ""
-"An integer used to order the FAQ amongst             others related to the "
-"same topic. If not given this FAQ will be             last in the list."
-msgstr ""
-
-#: models.py:83
-msgid "FAQ"
+"An integer used to order the question             amongst others related to "
+"the same topic. If not given this             question will be last in the "
+"list."
 msgstr ""
 
 #: models.py:84
-msgid "FAQs"
+msgid "questions"
 msgstr ""

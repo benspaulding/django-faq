@@ -3,5 +3,5 @@ include LICENSE.txt
 include MANIFEST.in
 include README.txt
 recursive-include docs *
-recursive-include faqs/locale *
-recursive-include faqs/templates *
+recursive-include faq/locale *
+recursive-include faq/templates *
