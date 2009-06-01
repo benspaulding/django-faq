@@ -89,13 +89,13 @@ class Question(FAQsBase):
     def save(self):
         if not self.slug:
             # We populate the slug here because the common case for adding an
-            # Question is as an inline to a topic and InlineModelAdmin does not
+            # Question is as an inline to a Topic and InlineModelAdmin does not
             # currently support ``prepopulated_fields`` and it's mean to make
             # the user supply a slug by hand.
             self.slug = slugify(self.question)[:50]
         if not self.ordering:
-            # When adding an Question to a topic, it's easy to overlook the
-            # ordering. We don't want to throw an error it's left blank,
+            # When adding an Question to a Topic, it's easy to overlook the
+            # ordering. We don't want to throw an error if it's left blank,
             # so to be nice we'll just put it at the end of the list.
             try:
                 # Find the highest ordering value for all other Questions
