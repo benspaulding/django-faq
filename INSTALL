@@ -1,0 +1,19 @@
+Thanks for downloading Django FAQ.
+
+To install it, make sure you have Python 2.4 or greater and Django trunk r9742
+or greater installed. Then run this command from the command prompt:
+
+    python setup.py install
+
+Note this requires a working Internet connection if you don't already have the
+Python utility "setuptools" installed.
+
+AS AN ALTERNATIVE, you can just copy the entire "faq" directory to Python's
+site-packages directory, which is located wherever your Python installation
+lives. Some places you might check are:
+
+    /usr/lib/python2.4/site-packages (Unix, Python 2.4)
+    C:\\PYTHON\site-packages         (Windows)
+
+This second solution does not require a working Internet connection; it
+bypasses "setuptools" entirely.
