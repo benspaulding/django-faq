@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the django-faq package.
 # Ben Spaulding <ben@benspaulding.com>, 2009.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: django-faq\n"
