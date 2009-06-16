@@ -37,22 +37,22 @@ class TopicAdmin(FAQAdminBase):
     def question_count_drafted(self, obj):
         """Returns the number of drafted Questions for this topic."""
         return obj.questions.drafted().count()
-    question_count_drafted.short_description = _(u'Drafted')
+    question_count_drafted.short_description = _(u'Drafted Q\'s')
 
     def question_count_published(self, obj):
         """Returns the number of published Questions for this topic."""
         return obj.questions.published().count()
-    question_count_published.short_description = _(u'Published')
+    question_count_published.short_description = _(u'Published Q\'s')
 
     def question_count_removed(self, obj):
         """Returns the number of removed Questions for this topic."""
         return obj.questions.removed().count()
-    question_count_removed.short_description = _(u'Removed')
+    question_count_removed.short_description = _(u'Removed Q\'s')
 
     def question_count_total(self, obj):
         """Returns the total number of Questions for this topic."""
         return obj.questions.count()
-    question_count_total.short_description = _(u'Total')
+    question_count_total.short_description = _(u'Total Q\'s')
 
 
 class QuestionAdmin(FAQAdminBase):

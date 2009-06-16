@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-faq\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-15 22:55-0500\n"
-"PO-Revision-Date: 2009-06-15 22:55-0500\n"
+"POT-Creation-Date: 2009-06-15 22:58-0500\n"
+"PO-Revision-Date: 2009-06-15 22:58-0500\n"
 "Last-Translator: Ben Spaulding <ben@benspaulding.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,19 +47,19 @@ msgid "Remove selected %(verbose_name_plural)s"
 msgstr ""
 
 #: admin.py:40
-msgid "Drafted"
+msgid "Drafted Q's"
 msgstr ""
 
 #: admin.py:45
-msgid "Published"
+msgid "Published Q's"
 msgstr ""
 
 #: admin.py:50
-msgid "Removed"
+msgid "Removed Q's"
 msgstr ""
 
 #: admin.py:55
-msgid "Total"
+msgid "Total Q's"
 msgstr ""
 
 #: constants.py:10
