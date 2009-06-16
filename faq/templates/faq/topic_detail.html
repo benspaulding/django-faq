@@ -1,9 +1,13 @@
 {% extends "faq/base.html" %}
 
+{% load i18n %}
 
-{% block title %}FAQ: {{ topic.title }}{% endblock %}
 
-{% block header %}FAQ: {{ topic.title }}{% endblock %}
+{% block title %}{% blocktrans with topic.title as topic %}FAQ: {{ topic }}{% endblocktrans %}{% endblock %}
+
+{% block header %}
+  <a href="{% url faq-topic-list %}">{% trans "FAQ" %}</a> › {{ topic }}
+{% endblock %}
 
 {% block content %}
   <p>{{ topic.description }}</p>
