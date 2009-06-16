@@ -25,6 +25,8 @@ def _field_lookups(model, status=None):
 
     if model == Topic:
         field_lookups['sites__pk'] = settings.SITE_ID
+        if status:
+            field_lookups['questions__status'] = status
 
     if model == Question:
         field_lookups['topic__sites__pk'] = settings.SITE_ID
@@ -67,4 +69,4 @@ class PublishedManager(models.Manager):
 
     def get_query_set(self):
         return super(PublishedManager, self).get_query_set().filter(
-            **_field_lookups(self.model, PUBLISHED))
+            **_field_lookups(self.model, PUBLISHED)).distinct()
