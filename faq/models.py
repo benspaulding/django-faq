@@ -32,8 +32,6 @@ def _field_lookups(model, status=None):
 
     if model == Topic:
         field_lookups['sites__pk'] = settings.SITE_ID
-        if status:
-            field_lookups['questions__status'] = status
 
     if model == Question:
         field_lookups['topic__sites__pk'] = settings.SITE_ID
