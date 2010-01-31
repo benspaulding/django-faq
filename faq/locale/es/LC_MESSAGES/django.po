@@ -6,9 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: django-faq\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-15 23:00-0500\n"
-"PO-Revision-Date: 2009-06-15 23:00-0500\n"
+"POT-Creation-Date: 2010-01-31 04:35-0600\n"
+"PO-Revision-Date: 2010-01-31 04:35-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,47 +17,46 @@ msgstr ""
 msgid "faq"
 msgstr ""
 
-#: actions.py:21
+#: admin.py:27
 #, python-format
 msgid "Changed status to '%s'."
 msgstr ""
 
-#: actions.py:33
+#: admin.py:40
 #, python-format
-msgid "%(rows_updated)s %(verbose_name)s was successfully %(verb)s."
-msgid_plural ""
-"%(rows_updated)s  %(verbose_name_plural)s were successfully %(verb)s."
+msgid "%(count)s %(object)s was successfully %(verb)s."
+msgid_plural "%(count)s  %(object)s were successfully %(verb)s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: actions.py:47
+#: admin.py:54
 #, python-format
 msgid "Draft selected %(verbose_name_plural)s"
 msgstr ""
 
-#: actions.py:53
+#: admin.py:60
 #, python-format
 msgid "Publish selected %(verbose_name_plural)s"
 msgstr ""
 
-#: actions.py:59
+#: admin.py:66
 #, python-format
 msgid "Remove selected %(verbose_name_plural)s"
 msgstr ""
 
-#: admin.py:40
+#: admin.py:103
 msgid "Drafted Q's"
 msgstr ""
 
-#: admin.py:45
+#: admin.py:108
 msgid "Published Q's"
 msgstr ""
 
-#: admin.py:50
+#: admin.py:113
 msgid "Removed Q's"
 msgstr ""
 
-#: admin.py:55
+#: admin.py:118
 msgid "Total Q's"
 msgstr ""
 
@@ -74,92 +72,92 @@ msgstr ""
 msgid "removed"
 msgstr ""
 
-#: models.py:15
+#: models.py:85
 msgid "date created"
 msgstr ""
 
-#: models.py:16
+#: models.py:86
 msgid "date modified"
 msgstr ""
 
-#: models.py:18
+#: models.py:88
 msgid "status"
 msgstr ""
 
-#: models.py:20
+#: models.py:90
 #, python-format
 msgid ""
 "Only %(class)s             with \"published\" status will be displayed "
 "publicly."
 msgstr ""
 
-#: models.py:42
+#: models.py:112
 msgid "title"
 msgstr ""
 
-#: models.py:43 models.py:71
+#: models.py:113 models.py:141
 msgid "slug"
 msgstr ""
 
-#: models.py:43
+#: models.py:113
 msgid "Used in         the URL for the topic. Must be unique."
 msgstr ""
 
-#: models.py:45
+#: models.py:115
 msgid "description"
 msgstr ""
 
-#: models.py:46
+#: models.py:116
 msgid "A short description of this topic."
 msgstr ""
 
-#: models.py:47
+#: models.py:117
 msgid "sites"
 msgstr ""
 
-#: models.py:49
+#: models.py:119
 msgid "template name"
 msgstr ""
 
-#: models.py:50
+#: models.py:120
 msgid ""
 "Optional template to use for this             topic's detail page, e.g., "
 "\"faq/topics/special.html\". If not             given the standard template "
 "will be used."
 msgstr ""
 
-#: models.py:56 models.py:74
+#: models.py:126 models.py:144
 msgid "topic"
 msgstr ""
 
-#: models.py:57
+#: models.py:127
 msgid "topics"
 msgstr ""
 
-#: models.py:70 models.py:83
+#: models.py:140 models.py:153
 msgid "question"
 msgstr ""
 
-#: models.py:71
+#: models.py:141
 msgid "Used in         the URL for the Question. Must be unique."
 msgstr ""
 
-#: models.py:73
+#: models.py:143
 msgid "answer"
 msgstr ""
 
-#: models.py:76
+#: models.py:146
 msgid "ordering"
 msgstr ""
 
-#: models.py:77
+#: models.py:147
 msgid ""
 "An integer used to order the question             amongst others related to "
 "the same topic. If not given this             question will be last in the "
 "list."
 msgstr ""
 
-#: models.py:84
+#: models.py:154
 msgid "questions"
 msgstr ""
 
