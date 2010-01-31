@@ -12,14 +12,14 @@ class FAQIndexBase(indexes.SearchIndex):
 class TopicIndex(FAQIndexBase):
     title = indexes.CharField(model_attr='title', indexed=True)
 
-    def get_query_set(self):
+    def get_queryset(self):
         return Topic.published.all()
 
 
 class QuestionIndex(FAQIndexBase):
     title = indexes.CharField(model_attr='question', indexed=True)
 
-    def get_query_set(self):
+    def get_queryset(self):
         return Question.published.all()
 
 
