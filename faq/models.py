@@ -87,8 +87,8 @@ class FAQBase(models.Model):
         null=True)
     status = models.IntegerField(_(u'status'), choices=STATUS_CHOICES,
         # TODO: Genericize/fix the help_text.
-        db_index=True, default=DRAFTED, help_text=_(u'Only %(class)s \
-            with "published" status will be displayed publicly.'))
+        db_index=True, default=DRAFTED, help_text=_(u'Only objects with \
+            "published" status will be displayed publicly.'))
 
     objects = StatusManager()
     on_site = OnSiteManager()

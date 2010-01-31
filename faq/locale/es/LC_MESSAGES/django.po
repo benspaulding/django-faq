@@ -6,7 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: django-faq\n"
-"POT-Creation-Date: 2010-01-31 04:35-0600\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-01-31 04:58-0600\n"
 "PO-Revision-Date: 2010-01-31 04:35-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -85,9 +86,8 @@ msgid "status"
 msgstr ""
 
 #: models.py:90
-#, python-format
 msgid ""
-"Only %(class)s             with \"published\" status will be displayed "
+"Only objects with             \"published\" status will be displayed "
 "publicly."
 msgstr ""
 
