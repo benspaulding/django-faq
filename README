@@ -13,6 +13,5 @@ TODO
 
 * Write Question inline admin ordering JavaScript
 * Consider if/how-to add ordering to Topics
-* Implement signals when (un)publishing Topic & Question objects
 * Write documentation
 * Write tests
