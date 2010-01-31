@@ -86,7 +86,7 @@ class FAQAdminBase(admin.ModelAdmin):
 class TopicAdmin(FAQAdminBase):
     fieldsets = (
         (None, {
-            'fields': (('title', 'slug'), 'description', 'status', 'sites',
+            'fields': ('title', 'slug', 'description', 'status', 'sites',
                 'template_name')}),
     )
     inlines = (QuestionInline, )
@@ -121,7 +121,7 @@ class TopicAdmin(FAQAdminBase):
 class QuestionAdmin(FAQAdminBase):
     fieldsets = (
         (None, {
-            'fields': ('topic', ('question', 'slug'), 'answer', 'status',
+            'fields': ('topic', 'question', 'slug', 'answer', 'status',
                 'ordering')}),
     )
     list_display = ('question', 'topic', 'status', 'ordering')
