@@ -16,6 +16,8 @@ setup(
     download_url='http://github.com/benspaulding/django-faq/tarball/v0.8.0.1',
     long_description = read('README'),
     packages = ['faq'],
+    package_data = {'faq': ['locale/*/LC_MESSAGES/*',
+                                  'templates/faq/*']},
     classifiers=['Development Status :: 4 - Beta',
                  'Environment :: Web Environment',
                  'Framework :: Django',

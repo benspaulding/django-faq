@@ -1,7 +1,7 @@
 # English translation for the django-faq project.
-# Copyright (C) 2009, Ben Spaulding.
+# Copyright (C) 2010, Ben Spaulding.
 # This file is distributed under the same license as the django-faq package.
-# Ben Spaulding <ben@benspaulding.com>, 2009.
+# Ben Spaulding <ben@benspaulding.com>, 2010.
 #
 msgid ""
 msgstr ""

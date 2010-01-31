@@ -1,8 +1,5 @@
-include AUTHORS
-include INSTALL
 include LICENSE
 include README
 include MANIFEST.in
-recursive-include docs *
 recursive-include faq/locale *
 recursive-include faq/templates *
