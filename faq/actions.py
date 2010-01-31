@@ -24,15 +24,16 @@ def update_status(modeladmin, request, queryset, status):
 
     # Send a message to the user telling them what has happened.
     message_dict = {
-        'rows_updated': queryset.count(),
-        'verbose_name': modeladmin.model._meta.verbose_name,
-        'verbose_name_plural': modeladmin.model._meta.verbose_name_plural,
+        'count': queryset.count(),
+        'object': modeladmin.model._meta.verbose_name,
         'verb': dict(STATUS_CHOICES)[status],
     }
+    if not message_dict['count'] == 1:
+        message_dict['object'] = modeladmin.model._meta.verbose_name_plural
     user_message = ungettext(
-        u'%(rows_updated)s %(verbose_name)s was successfully %(verb)s.',
-        u'%(rows_updated)s  %(verbose_name_plural)s were successfully %(verb)s.',
-        message_dict['rows_updated']) % message_dict
+        u'%(count)s %(object)s was successfully %(verb)s.',
+        u'%(count)s  %(object)s were successfully %(verb)s.',
+        message_dict['count']) % message_dict
     modeladmin.message_user(request, user_message)
 
     # Return None to display the change list page again and allow the user
