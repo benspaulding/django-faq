@@ -3,7 +3,7 @@ from django.contrib.sites.models import Site
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ugettext_noop, ungettext
 
-from faq.constants import DRAFTED, PUBLISHED, REMOVED, STATUS_CHOICES
+from faq.settings import DRAFTED, PUBLISHED, REMOVED, STATUS_CHOICES
 from faq.models import Topic, Question
 from faq.forms import QuestionForm
 

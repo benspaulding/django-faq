@@ -1,7 +1,16 @@
 from django.conf.urls.defaults import *
 
-from faq.views import topic_list, topic_detail, question_detail
+from faq.views.shallow import topic_list
+from faq.views.normal import topic_detail
+from faq.views.deep import question_detail
 
+
+# Include these patterns if you want URLs like:
+#
+#   /faq/
+#   /faq/topic/
+#   /faq/topic/question/
+#
 
 urlpatterns = patterns('',
     url(r'^$', topic_list, name='faq-topic-list'),

@@ -3,6 +3,12 @@
 {% load i18n %}
 
 
+{% comment %}
+  This template will be used regardless of what ``faq.urls`` patterns are used.
+  But note that you will want to code this differently depending on the
+  patterns used. This template is coded for either ``normal`` or ``deep``.
+{% endcomment %}
+
 {% block title %}{% trans "Frequently Asked Questions" %}{% endblock %}
 {% block header %}{% trans "Frequently Asked Questions" %}{% endblock %}
 
@@ -11,6 +17,20 @@
   <ol>
     {% for topic in topic_list %}
       <li><a href="{{ topic.get_absolute_url }}">{{ topic.title }}</a></li>
+      {% comment %} For ``faq.urls.shallow`` you may do something like the following.
+      <li id="{{ topic.slug }}">
+        <h2>{{ topic.title }} <a href="#{{ topic.slug }}">∞</a></h2>
+        <ol>
+          {% for question in topic.questions.published %}
+          <li id="{{ question.slug }}">
+            <h3>{{ question.question }}
+              <a href="#{{ question.slug }}">∞</a></h3>
+            {{ question.answer|linebreaks|urlize }}
+          </li>
+          {% endfor %}
+        </ol>
+      </li>
+      {% endcomment %}
     {% endfor %}
   </ol>
 {% endblock %}

@@ -1,0 +1,20 @@
+{% extends "faq/base.html" %}
+
+{% load i18n %}
+
+
+{# This template will only be used if the ``faq.urls.deep`` patterns are used. #}
+
+{% block title %}{% blocktrans with question.question as question %}FAQ: {{ question }}{% endblocktrans %}{% endblock %}
+
+
+{% block header %}
+  <a href="{% url faq-topic-list %}">{% trans "FAQ" %}</a> ›
+  <a href="{{ topic.get_absolute_url }}">{{ topic }}</a> ›
+  {{ question }}
+{% endblock %}
+
+
+{% block content %}
+  {{ question.answer|linebreaks|urlize }}
+{% endblock %}

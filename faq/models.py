@@ -6,7 +6,7 @@ from django.contrib.sites.models import Site
 from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext_lazy as _
 
-from faq.constants import DRAFTED, PUBLISHED, REMOVED, STATUS_CHOICES
+from faq.settings import DRAFTED, PUBLISHED, REMOVED, STATUS_CHOICES
 
 
 # Managers.

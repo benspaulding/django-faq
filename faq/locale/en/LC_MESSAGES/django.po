@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-faq\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-31 04:58-0600\n"
+"POT-Creation-Date: 2010-02-01 02:13-0600\n"
 "PO-Revision-Date: 2010-01-31 04:35-0600\n"
 "Last-Translator: Ben Spaulding <ben@benspaulding.com>\n"
 "MIME-Version: 1.0\n"
@@ -59,18 +59,6 @@ msgstr ""
 
 #: admin.py:118
 msgid "Total Q's"
-msgstr ""
-
-#: constants.py:10
-msgid "drafted"
-msgstr ""
-
-#: constants.py:11
-msgid "published"
-msgstr ""
-
-#: constants.py:12
-msgid "removed"
 msgstr ""
 
 #: models.py:85
@@ -161,15 +149,32 @@ msgstr ""
 msgid "questions"
 msgstr ""
 
-#: templates/faq/topic_detail.html:6
+#: settings.py:14
+msgid "drafted"
+msgstr ""
+
+#: settings.py:15
+msgid "published"
+msgstr ""
+
+#: settings.py:16
+msgid "removed"
+msgstr ""
+
+#: templates/faq/question_detail.html:8
+#, python-format
+msgid "FAQ: %(question)s"
+msgstr ""
+
+#: templates/faq/question_detail.html:12 templates/faq/topic_detail.html:16
+msgid "FAQ"
+msgstr ""
+
+#: templates/faq/topic_detail.html:12
 #, python-format
 msgid "FAQ: %(topic)s"
 msgstr ""
 
-#: templates/faq/topic_detail.html:10
-msgid "FAQ"
-msgstr ""
-
-#: templates/faq/topic_list.html:6 templates/faq/topic_list.html.py:7
+#: templates/faq/topic_list.html:12 templates/faq/topic_list.html.py:13
 msgid "Frequently Asked Questions"
 msgstr ""

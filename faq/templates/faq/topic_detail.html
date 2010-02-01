@@ -3,6 +3,12 @@
 {% load i18n %}
 
 
+{% comment %}
+  This template will be used when either ``faq.urls.normal`` (default) or
+  ``faq.urls.deep`` patterns are used. Note that you will want to code this
+  differently depending on the patterns. This template is coded for ``normal``.
+{% endcomment %}
+
 {% block title %}{% blocktrans with topic.title as topic %}FAQ: {{ topic }}{% endblocktrans %}{% endblock %}
 
 
@@ -17,12 +23,13 @@
   <ol>
     {% for question in question_list %}
       <li>
-        <h4 id="{{ question.slug }}">
-          {{ question.question }}
-          <a href="#{{ question.slug }}">∞</a>
-        </h4>
+        <h2 id="{{ question.slug }}">{{ question.question }}
+          <a href="#{{ question.slug }}">∞</a></h2>
         {{ question.answer|linebreaks|urlize }}
       </li>
+      {% comment %} For ``deep`` you may do something like the following.
+      <li><a href="{{ question.get_absolute_url }}">{{ question.question }}</a></li>
+      {% endcomment %}
     {% endfor %}
   </ol>
 {% endblock %}
