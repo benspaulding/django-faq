@@ -91,7 +91,7 @@ class TopicAdmin(FAQAdminBase):
     )
     inlines = (QuestionInline, )
     list_display = ('title', 'description', 'status', 'question_count')
-    list_filter = ('status', 'modified', 'created', 'sites')
+    list_filter = ('status', 'sites', 'modified', 'created')
     prepopulated_fields = {'slug': ('title', )}
     search_fields = ('title', 'description')
 
@@ -108,7 +108,7 @@ class QuestionAdmin(FAQAdminBase):
                 'ordering')}),
     )
     list_display = ('question', 'topic', 'status', 'ordering')
-    list_filter = ('status', 'modified', 'created', 'topic')
+    list_filter = ('status', 'topic', 'modified', 'created')
     prepopulated_fields = {'slug': ('question', )}
     save_as = True
     search_fields = ('question', 'answer')
