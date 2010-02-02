@@ -45,36 +45,27 @@ def _field_lookups(model, status=None):
     return field_lookups
 
 
-class StatusManager(models.Manager):
+class OnSiteManager(models.Manager):
     """Custom manager providing shortcuts for filtering by status."""
 
+    def on_site(self):
+        """Returns only items related to the current site."""
+        return self.get_query_set().filter(**_field_lookups(self.model))
+
     def drafted(self):
-        """Returns only items with a status of 'drafted'."""
-        return self.get_query_set().filter(status=DRAFTED)
+        """Returns only on-site items with a status of 'drafted'."""
+        return self.get_query_set().filter(
+            **_field_lookups(self.model, DRAFTED))
 
     def published(self):
-        """Returns only items with a status of 'published'."""
-        return self.get_query_set().filter(status=PUBLISHED)
+        """Returns only on-site items with a status of 'published'."""
+        return self.get_query_set().filter(
+            **_field_lookups(self.model, PUBLISHED))
 
     def removed(self):
-        """Returns only items with a status of 'removed'."""
-        return self.get_query_set().filter(status=REMOVED)
-
-
-class OnSiteManager(StatusManager):
-    """Custom manager that returns only items related to the current site."""
-
-    def get_query_set(self):
-        return super(OnSiteManager, self).get_query_set().filter(
-            **_field_lookups(self.model))
-
-
-class PublishedManager(models.Manager):
-    """Custom manager that returns only published, on-site items."""
-
-    def get_query_set(self):
-        return super(PublishedManager, self).get_query_set().filter(
-            **_field_lookups(self.model, PUBLISHED)).distinct()
+        """Returns only on-site items with a status of 'removed'."""
+        return self.get_query_set().filter(
+            **_field_lookups(self.model, REMOVED))
 
 
 # Models.
@@ -90,9 +81,7 @@ class FAQBase(models.Model):
         db_index=True, default=DRAFTED, help_text=_(u'Only objects with \
             "published" status will be displayed publicly.'))
 
-    objects = StatusManager()
-    on_site = OnSiteManager()
-    published = PublishedManager()
+    objects = OnSiteManager()
 
     class Meta:
         abstract = True

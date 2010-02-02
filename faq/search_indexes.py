@@ -13,14 +13,14 @@ class TopicIndex(FAQIndexBase):
     title = indexes.CharField(model_attr='title', indexed=True)
 
     def get_queryset(self):
-        return Topic.published.all()
+        return Topic.objects.published()
 
 
 class QuestionIndex(FAQIndexBase):
     title = indexes.CharField(model_attr='question', indexed=True)
 
     def get_queryset(self):
-        return Question.published.all()
+        return Question.objects.published()
 
 
 site.register(Topic, TopicIndex)

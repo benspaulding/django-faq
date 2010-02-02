@@ -6,7 +6,7 @@ from faq.models import Topic, Question
 
 
 def _fragmentify(model, slug, url=None):
-    get_object_or_404(model.published.filter(slug=slug))
+    get_object_or_404(model.objects.published().filter(slug=slug))
     url = url or reverse('faq-topic-list')
     fragment = '#%s' % slug
 
@@ -25,7 +25,7 @@ def topic_list(request):
             relate to the current :model:`sites.Site`.
 
     """
-    return object_list(request, queryset=Topic.published.all(),
+    return object_list(request, queryset=Topic.objects.published(),
         template_object_name='topic')
 
 
@@ -39,6 +39,7 @@ def topic_detail(request, slug):
 
     """
     return _fragmentify(Topic, slug)
+
 
 def question_detail(request, topic_slug, slug):
     """

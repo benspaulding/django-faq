@@ -26,10 +26,10 @@ def topic_detail(request, slug):
 
     """
     extra_context = {
-        'question_list': Question.published.filter(topic__slug=slug),
+        'question_list': Question.objects.published().filter(topic__slug=slug),
     }
 
-    return object_detail(request, queryset=Topic.published.all(),
+    return object_detail(request, queryset=Topic.objects.published(),
         extra_context=extra_context, template_object_name='topic',
         template_name_field='template_name', slug=slug)
 

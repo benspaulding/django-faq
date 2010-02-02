@@ -17,9 +17,9 @@ def question_detail(request, topic_slug, slug):
 
     """
     extra_context = {
-        'topic': Topic.published.get(slug=topic_slug),
+        'topic': Topic.objects.published().get(slug=topic_slug),
     }
 
-    return object_detail(request, queryset=Question.published.all(),
+    return object_detail(request, queryset=Question.objects.published(),
         extra_context=extra_context, template_object_name='question',
         slug=slug)
