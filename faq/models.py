@@ -1,5 +1,3 @@
-import datetime
-
 from django.db import models
 from django.conf import settings
 from django.contrib.sites.models import Site
@@ -73,9 +71,8 @@ class OnSiteManager(models.Manager):
 class FAQBase(models.Model):
     """A model holding information common to Topics and Questions."""
 
-    created = models.DateTimeField(_(u'date created'), editable=False)
-    modified = models.DateTimeField(_(u'date modified'), editable=False,
-        null=True)
+    created = models.DateTimeField(_(u'date created'), auto_now_add=True)
+    modified = models.DateTimeField(_(u'date modified'), auto_now=True)
     status = models.IntegerField(_(u'status'), choices=STATUS_CHOICES,
         # TODO: Genericize/fix the help_text.
         db_index=True, default=DRAFTED, help_text=_(u'Only objects with \
@@ -86,13 +83,6 @@ class FAQBase(models.Model):
     class Meta:
         abstract = True
         get_latest_by = 'modified'
-
-    def save(self):
-        if not self.created:
-            self.created = datetime.datetime.now()
-        else:
-            self.modified = datetime.datetime.now()
-        super(FAQBase, self).save()
 
 
 class Topic(FAQBase):

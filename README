@@ -11,6 +11,9 @@ and lists of Frequently Asked Questions (FAQ) in Django_ applications.
 TODO
 ====
 
+* Write slug-based template loading for topics. (And questions within topics.)
+* Document change of modified date field behavior. (Drop null=True, now have a
+    date upon creation.) Write migration if necessary.
 * Write Question inline admin ordering JavaScript
 * Consider if/how-to add ordering to Topics
 * Write documentation
