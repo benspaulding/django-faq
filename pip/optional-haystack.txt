@@ -1,0 +1,2 @@
+django-haystack<2
+django-haystack>=1
