@@ -11,12 +11,7 @@ def topic_detail(request, slug):
     A detail view of a Topic
 
     Templates:
-        ``<topic_template_name>``
-            If the :model:`faq.Topic` object has a ``template_name`` value,
-            the system will attempt to load that template.
         :template:`faq/topic_detail.html`
-            If there is no ``template_name`` given or the template specified
-            does not exist the standard template will be used.
     Context:
         topic
             An :model:`faq.Topic` object.
@@ -30,8 +25,7 @@ def topic_detail(request, slug):
     }
 
     return object_detail(request, queryset=Topic.objects.published(),
-        extra_context=extra_context, template_object_name='topic',
-        template_name_field='template_name', slug=slug)
+        extra_context=extra_context, template_object_name='topic', slug=slug)
 
 
 def question_detail(request, topic_slug, slug):

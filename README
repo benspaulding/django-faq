@@ -13,6 +13,8 @@ TODO
 
 * Document change of modified date field behavior. (Drop null=True, now have a
     date upon creation.) Write migration if necessary.
+* Document removal of custom template name field on Topic. Feature made little
+    sense given the various URL/view setups. Write migration if necessary.
 * Write tests
 * Write documentation
 * Bump version

@@ -6,7 +6,6 @@
             "status": 3, 
             "description": "All you need to know about applying for stuff.", 
             "title": "Applying for stuff", 
-            "template_name": "", 
             "created": "2009-05-19 11:39:20", 
             "modified": "2009-05-22 22:04:41", 
             "sites": [
@@ -22,7 +21,6 @@
             "status": 1, 
             "description": "Please don\u2019t send it back \u2014 we just got rid of it.", 
             "title": "Returning things", 
-            "template_name": "faq/topics/returns.html", 
             "created": "2009-05-18 21:00:06", 
             "modified": "2009-05-22 22:04:32", 
             "sites": [
@@ -38,7 +36,6 @@
             "status": 2, 
             "description": "All about shipping stuff to places and people.", 
             "title": "Shipping stuff", 
-            "template_name": "", 
             "created": "2009-05-18 20:54:28", 
             "modified": "2009-05-20 17:17:38", 
             "sites": [

@@ -86,8 +86,7 @@ class FAQAdminBase(admin.ModelAdmin):
 class TopicAdmin(FAQAdminBase):
     fieldsets = (
         (None, {
-            'fields': ('title', 'slug', 'description', 'status', 'sites',
-                'template_name')}),
+            'fields': ('title', 'slug', 'description', 'status', 'sites')}),
     )
     inlines = (QuestionInline, )
     list_display = ('title', 'description', 'status', 'question_count')

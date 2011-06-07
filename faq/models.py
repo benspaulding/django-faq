@@ -95,10 +95,6 @@ class Topic(FAQBase):
         help_text=_(u'A short description of this topic.'))
     sites = models.ManyToManyField(Site, verbose_name=_(u'sites'),
         related_name='faq_topics')
-    template_name = models.CharField(_(u'template name'), blank=True,
-        max_length=255, help_text=_(u'Optional template to use for this \
-            topic\'s detail page, e.g., "faq/topics/special.html". If not \
-            given the standard template will be used.'))
 
     class Meta(FAQBase.Meta):
         ordering = ('title', 'slug')
