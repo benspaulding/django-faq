@@ -11,10 +11,29 @@ and lists of Frequently Asked Questions (FAQ) in Django_ applications.
 TODO
 ====
 
-* Write slug-based template loading for topics. (And questions within topics.)
 * Document change of modified date field behavior. (Drop null=True, now have a
     date upon creation.) Write migration if necessary.
-* Write Question inline admin ordering JavaScript
-* Consider if/how-to add ordering to Topics
-* Write documentation
 * Write tests
+* Write documentation
+* Bump version
+* Write Question inline admin ordering JavaScript
+
+* Consider if/how-to add ordering to Topics (complicated because of site relations)
+* Add “Ask a question” feature. (Or not. Maybe this would be easier for them
+  to template in a contact form.)
+* Write slug-based template loading for topics. (And questions within topics.)
+
+* Make question slug unique *for the topic*. (Except maybe not, because the
+    way shallow URLs are currently templated requires complete uniqueness.)
+    unique_together in the model’s meta class could handle this (though the
+    error message is not as graceful as I would like) except that an exception
+    is thrown when a question is an inline (like with a topic, as is the most
+    common way to handle questions).
+    Also, consider if migration is needed, seeing how unique constraint will be
+    removed from the slug field.
+
+
+When dropping Django 1.2 support
+--------------------------------
+
+* Update to class-based generic views
