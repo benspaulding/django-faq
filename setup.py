@@ -11,7 +11,7 @@ setup(
     description='Frequently Asked Question (FAQ) management for Django apps.',
     url='http://github.com/benspaulding/django-faq/',
     author='Ben Spaulding',
-    author_email='ben@benspaulding.com',
+    author_email='ben@benspaulding.us',
     license='BSD',
     download_url='http://github.com/benspaulding/django-faq/tarball/v0.8.2',
     long_description = read('README'),
