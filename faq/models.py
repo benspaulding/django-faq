@@ -135,7 +135,7 @@ class Question(FAQBase):
     def __unicode__(self):
         return self.question
 
-    def save(self):
+    def save(self, *args, **kwargs):
         if not self.slug:
             # We populate the slug here because the common case for adding an
             # Question is as an inline to a Topic and InlineModelAdmin does not
@@ -156,7 +156,7 @@ class Question(FAQBase):
                 # as no. 1.
                 ordering = 1
             self.ordering = ordering
-        super(Question, self).save()
+        super(Question, self).save(*args, **kwargs)
 
     @models.permalink
     def get_absolute_url(self):
