@@ -1,10 +1,11 @@
 from haystack import indexes
 from haystack.sites import site
 
+from faq.settings import SEARCH_INDEX
 from faq.models import Topic, Question
 
 
-class FAQIndexBase(indexes.SearchIndex):
+class FAQIndexBase(SEARCH_INDEX):
 
     text = indexes.CharField(document=True, use_template=True)
     url = indexes.CharField(model_attr='get_absolute_url', indexed=False)
