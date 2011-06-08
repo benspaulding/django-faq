@@ -14,7 +14,7 @@ setup(
     author_email='ben@benspaulding.us',
     license='BSD',
     download_url='http://github.com/benspaulding/django-faq/tarball/v0.8.2',
-    long_description = read('README'),
+    long_description = read('README.rst'),
     packages = ['faq', 'faq.urls', 'faq.views'],
     package_data = {'faq': ['locale/*/LC_MESSAGES/*',
                             'templates/faq/*',
