@@ -109,7 +109,6 @@ class QuestionAdmin(FAQAdminBase):
     list_display = ('question', 'topic', 'status', 'ordering')
     list_filter = ('status', 'topic', 'modified', 'created')
     prepopulated_fields = {'slug': ('question', )}
-    save_as = True
     search_fields = ('question', 'answer')
 
 
