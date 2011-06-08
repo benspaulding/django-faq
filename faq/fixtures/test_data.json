@@ -1,0 +1,207 @@
+[
+    {
+        "pk": 3, 
+        "model": "faq.topic", 
+        "fields": {
+            "status": 3, 
+            "description": "All about \u2026 US!", 
+            "title": "About us", 
+            "created": "2011-06-07 15:21:44", 
+            "modified": "2011-06-07 15:30:31", 
+            "sites": [
+                2
+            ], 
+            "slug": "about-us"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "faq.topic", 
+        "fields": {
+            "status": 3, 
+            "description": "Sshhh!", 
+            "title": "Black market items", 
+            "created": "2011-06-07 15:26:07", 
+            "modified": "2011-06-07 15:26:07", 
+            "sites": [
+                1
+            ], 
+            "slug": "black-market-items"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "faq.topic", 
+        "fields": {
+            "status": 2, 
+            "description": "All about returning an unwanted item.", 
+            "title": "Returns", 
+            "created": "2011-06-07 11:33:25", 
+            "modified": "2011-06-07 15:29:41", 
+            "sites": [
+                1, 
+                2
+            ], 
+            "slug": "returns"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "faq.topic", 
+        "fields": {
+            "status": 2, 
+            "description": "All about how we ship your purchase to you.", 
+            "title": "Shipping", 
+            "created": "2011-06-07 11:31:15", 
+            "modified": "2011-06-07 15:28:46", 
+            "sites": [
+                1
+            ], 
+            "slug": "shipping"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "faq.topic", 
+        "fields": {
+            "status": 1, 
+            "description": "About our website.", 
+            "title": "Website", 
+            "created": "2011-06-07 15:23:59", 
+            "modified": "2011-06-07 15:23:59", 
+            "sites": [
+                1, 
+                2
+            ], 
+            "slug": "website"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "faq.question", 
+        "fields": {
+            "status": 2, 
+            "created": "2011-06-07 15:21:44", 
+            "ordering": 1, 
+            "question": "Are you hiring?", 
+            "modified": "2011-06-07 15:21:44", 
+            "topic": 3, 
+            "answer": "Yes and no. If you are awesome, yes. If you are less than awesome, then not so much.", 
+            "slug": "are-you-hiring"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "faq.question", 
+        "fields": {
+            "status": 2, 
+            "created": "2011-06-07 15:23:59", 
+            "ordering": 1, 
+            "question": "Do you have an SLA?", 
+            "modified": "2011-06-07 15:23:59", 
+            "topic": 4, 
+            "answer": "No, because people with those get hosed.", 
+            "slug": "do-you-have-an-sla"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "faq.question", 
+        "fields": {
+            "status": 2, 
+            "created": "2011-06-07 15:26:07", 
+            "ordering": 1, 
+            "question": "How do you acquire black market items?", 
+            "modified": "2011-06-07 15:26:07", 
+            "topic": 5, 
+            "answer": "Very, very carefully", 
+            "slug": "how-do-you-acquire-black-market-items"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "faq.question", 
+        "fields": {
+            "status": 2, 
+            "created": "2011-06-07 11:33:25", 
+            "ordering": 1, 
+            "question": "How long do I have to return my item?", 
+            "modified": "2011-06-07 11:33:25", 
+            "topic": 2, 
+            "answer": "We are very liberal with this, but it is generally 20-30 minutes.", 
+            "slug": "how-long-do-i-have-to-return-my-item"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "faq.question", 
+        "fields": {
+            "status": 2, 
+            "created": "2011-06-07 11:31:15", 
+            "ordering": 1, 
+            "question": "How much does shipping cost?", 
+            "modified": "2011-06-07 11:31:15", 
+            "topic": 1, 
+            "answer": "Not much. At last check it was just shy of one frillion dollars.", 
+            "slug": "how-much-does-shipping-cost"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "faq.question", 
+        "fields": {
+            "status": 2, 
+            "created": "2011-06-07 11:32:14", 
+            "ordering": 2, 
+            "question": "How fast will my item arrive?", 
+            "modified": "2011-06-07 11:32:14", 
+            "topic": 1, 
+            "answer": "Sometime next week. We think.", 
+            "slug": "how-fast-will-my-item-arrive"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "faq.question", 
+        "fields": {
+            "status": 1, 
+            "created": "2011-06-07 15:28:46", 
+            "ordering": 3, 
+            "question": "In what color box do you ship?", 
+            "modified": "2011-06-07 15:28:46", 
+            "topic": 1, 
+            "answer": "Green, because it is good for the environment. Go us!", 
+            "slug": "in-what-color-box-do-you-ship"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "faq.question", 
+        "fields": {
+            "status": 3, 
+            "created": "2011-06-07 15:28:46", 
+            "ordering": 4, 
+            "question": "What carrier do you use?", 
+            "modified": "2011-06-07 15:28:46", 
+            "topic": 1, 
+            "answer": "Whomever saves us the most money.", 
+            "slug": "what-carrier-do-you-use"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "sites.site", 
+        "fields": {
+            "domain": "example.com", 
+            "name": "example.com"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "sites.site", 
+        "fields": {
+            "domain": "example.us", 
+            "name": "example.us"
+        }
+    }
+]
