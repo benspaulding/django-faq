@@ -1,13 +1,13 @@
 from django.test import TestCase
 from django.contrib.sites.models import Site
 
-from faq.settings import DRAFTED, PUBLISHED, REMOVED, STATUS_CHOICES
-from faq.models import FAQBase, Topic, Question, OnSiteManager
+from faq.settings import DRAFTED
+from faq.models import Topic, Question, OnSiteManager
 
 ##
+# Test fragmentify, or just view redirects?
 # Test _field_lookups, or just Manager?
 # Test admin actions?
-# Test fragmentify?
 ##
 
 class BaseTestCase(TestCase):
