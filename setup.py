@@ -7,13 +7,13 @@ def read(fname):
 
 setup(
     name='django-faq',
-    version='0.8.2',
+    version=VERSION,
     description='Frequently Asked Question (FAQ) management for Django apps.',
     url='http://github.com/benspaulding/django-faq/',
     author='Ben Spaulding',
     author_email='ben@benspaulding.us',
     license='BSD',
-    download_url='http://github.com/benspaulding/django-faq/tarball/v0.8.2',
+    download_url='http://github.com/benspaulding/django-faq/tarball/v%s' % VERSION,
     long_description = read('README.rst'),
     packages = ['faq', 'faq.urls', 'faq.views'],
     package_data = {'faq': ['locale/*/LC_MESSAGES/*',
