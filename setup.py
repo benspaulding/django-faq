@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+
 from distutils.core import setup
 
 
@@ -29,16 +30,26 @@ setup(
     license='BSD',
     download_url='http://github.com/benspaulding/django-faq/tarball/v%s' % get_version(),
     long_description = get_long_desc(),
-    packages = ['faq', 'faq.urls', 'faq.views'],
-    package_data = {'faq': ['locale/*/LC_MESSAGES/*',
-                            'templates/faq/*',
-                            'templates/search/indexes/faq/*']},
-    classifiers=['Development Status :: 4 - Beta',
-                 'Environment :: Web Environment',
-                 'Framework :: Django',
-                 'Intended Audience :: Developers',
-                 'License :: OSI Approved :: BSD License',
-                 'Operating System :: OS Independent',
-                 'Programming Language :: Python',
-                 'Topic :: Internet :: WWW/HTTP :: Site Management'],
+    packages = [
+        'faq',
+        'faq.urls',
+        'faq.views',
+    ],
+    package_data = {
+        'faq': [
+            'locale/*/LC_MESSAGES/*',
+            'templates/faq/*',
+            'templates/search/indexes/faq/*',
+        ],
+    },
+    classifiers=[
+        'Development Status :: 4 - Beta',
+        'Environment :: Web Environment',
+        'Framework :: Django',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: BSD License',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Topic :: Internet :: WWW/HTTP :: Site Management',
+    ],
 )
