@@ -32,11 +32,13 @@ setup(
     long_description = get_long_desc(),
     packages = [
         'faq',
+        'faq.tests',
         'faq.urls',
         'faq.views',
     ],
     package_data = {
         'faq': [
+            'fixtures/*',
             'locale/*/LC_MESSAGES/*',
             'templates/faq/*',
             'templates/search/indexes/faq/*',
