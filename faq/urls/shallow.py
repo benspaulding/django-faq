@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.conf.urls.defaults import *
 
 from faq.views.shallow import topic_list, topic_detail, question_detail

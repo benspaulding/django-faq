@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """
 A Frequently Asked Question (FAQ) management application for Django apps.
 
