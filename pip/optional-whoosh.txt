@@ -1,2 +1,0 @@
-# If you want to get Haystack running fast, use Whoosh.
-Whoosh<=1.2
