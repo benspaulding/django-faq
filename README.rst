@@ -18,7 +18,9 @@ TODO’s
 Below are tasks that need done, features under consideration, and some
 reminders for the future.
 
-* Finish writing tests.
+* Write tests for faq.
+* Wire up testing on travis-ci.org.
+* Write tests for haystack bits.
 * Write general documentation, and specifically,
 
   * The change of modified date field behavior. (Dropped null=True, now
@@ -26,14 +28,9 @@ reminders for the future.
   * Document removal of custom template name field on Topic. (The feature made
     little sense given the various URL/view setups.) Write migration if
     necessary.
+  * Note supported versions of Python, Django, and Haystack.
 
-* Finalize Django, Haystack, and Whoosh versions in pip requirements/optionals files.
-* Bump the version number.
-* Roll a release
-
-  * Create git tag
-  * Get on Read the Docs
-  * Upload to PyPi
+* Put documentation on readthedocs.org.
 
 
 Features
@@ -42,6 +39,7 @@ Features
 * Create a better interface for ordering questions within a topic.
 * Consider if/how to add ordering to Topics. (This is complicated because of
   site relations.)
+* Consider making the requirement for ``django.contrib.sites`` optional.
 
 
 In the future, when dropping Django 1.2 support
